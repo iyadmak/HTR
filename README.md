@@ -1,9 +1,6 @@
 # Handwritten Text Recognition system
 
-
-# Handwritten Text Recognition with TensorFlow
-
-* **Graduation project for my bachelor's degree**
+* **Graduation project for my bachelor's degree (In progress)**
 
 
 Handwritten Text Recognition (HTR) system based on LSTMs & implemented with TensorFlow (TF) and trained on the IAM off-line HTR dataset.
