@@ -5,7 +5,7 @@ def CleanData():
     
     words_list = []
 
-    base_path = "/Users/book/Downloads/PFE/Outils/IAM Dataset/ascii"
+    base_path = "/Users/book/Downloads/PFE/Outils/IAM_Dataset/ascii"
     words = open(f"{base_path}/words.txt", "r").readlines()
 
     for line in words:
@@ -14,7 +14,7 @@ def CleanData():
         if line.split(" ")[1] != "err":  
             words_list.append(line)
 
-    print(len(words_list))
+    #print(len(words_list))
 
     
     np.random.shuffle(words_list)
