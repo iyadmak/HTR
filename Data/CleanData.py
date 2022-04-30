@@ -1,12 +1,13 @@
 #Clear all errored entries
+from fastapi import Path
 import numpy as np
 
 def CleanData():
     
     words_list = []
 
-    base_path = "/Users/book/Downloads/PFE/Outils/IAM_Dataset/ascii"
-    words = open(f"{base_path}/words.txt", "r").readlines()
+    path = "/Users/book/Downloads/PFE/Outils/IAM_Dataset/ascii"
+    words = open(f"{path}/words.txt", "r").readlines()
 
     for line in words:
         if line[0] == "#":
