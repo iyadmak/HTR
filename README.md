@@ -3,6 +3,8 @@
 * **Graduation project for my Master's degree (In progress)**
 
 
-Handwritten Text Recognition (HTR) system based on LSTMs & implemented with TensorFlow (TF) and trained on the IAM off-line HTR dataset.
-The model takes **images of single words or text lines (multiple words) as input** and **outputs the recognized text**.
+* **Based on LSTM architecture.**
+* **Implemented with TensorFlow (TF).**
+* **Trained on the IAM off-line HTR dataset.**
+* **The model takes images of single words as input & outputs the recognized text.**
 
