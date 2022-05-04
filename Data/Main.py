@@ -3,14 +3,15 @@ from SplitData import SplitData
 from InputData import ImagePathsLabels
 from PrintFunctions import *
 
+##### MainFunc()
+MainFunc()
 
 ##### CleanData
-words_list = CleanData()
+words_list,words = CleanData()
 CleanDataFunc()
 
 
 ##### SplitData
-train_samples ,validation_samples ,test_samples = SplitData(words_list)
 SplitDataFunc()
 
 

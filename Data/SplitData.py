@@ -11,3 +11,5 @@ def SplitData(words_list) :
     test_samples = test_samples[SecondeSplit:]
 
     return train_samples ,validation_samples ,test_samples
+
+    

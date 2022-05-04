@@ -20,5 +20,5 @@ def CleanData():
     
     np.random.shuffle(words_list)
 
-    return words_list
+    return words_list ,words
 
