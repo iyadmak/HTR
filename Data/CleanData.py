@@ -1,5 +1,5 @@
 #Clear all errored entries
-from fastapi import Path
+from tqdm import tqdm  as bar
 import numpy as np
 
 def CleanData():
@@ -9,12 +9,16 @@ def CleanData():
     path = "/Users/book/Downloads/PFE/Outils/IAM_Dataset/ascii"
     words = open(f"{path}/words.txt", "r").readlines()
 
-    for line in words:
+    
+
+    for line in bar(words):
         if line[0] == "#":
+           
             continue
+
         if line.split(" ")[1] != "err":  
             words_list.append(line)
-
+            
     #print(len(words_list))
 
     

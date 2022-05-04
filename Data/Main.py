@@ -3,16 +3,23 @@ from SplitData import SplitData
 from InputData import ImagePathsLabels
 from PrintFunctions import *
 
-##### MainFunc()
-MainFunc()
+if __name__=='__main__':
+    ##### MainFunc()
+    MainFunc()
 
-##### CleanData
-CleanDataFunc()
+    ##### CleanData
+
+    
+    CleanDataFunc()
 
 
-##### SplitData
-SplitDataFunc()
+    ##### SplitData
+    SplitDataFunc()
 
 
-##### ImagePathsLabels
-ImagePathsLabelsFunc()
+    ##### ImagePathsLabels
+    
+    ImagePathsLabelsFunc()
+
+    ##### PrepareLabelsFunc
+    PrepareLabelsFunc() 

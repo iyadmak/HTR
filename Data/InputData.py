@@ -1,6 +1,7 @@
 
-import os
 from SplitData import SplitData
+from tqdm import tqdm  as bar
+import os
 
 def ImagePathsLabels(samples):
 
@@ -9,7 +10,7 @@ def ImagePathsLabels(samples):
     base_path = "/Users/book/Downloads/PFE/Outils/IAM_Dataset/words"
 
     
-    for (i, file_line) in enumerate(samples):
+    for  file_line in bar(samples):
         line_split = file_line.strip()
         line_split = line_split.split(" ")
 
