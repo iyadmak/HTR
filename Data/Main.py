@@ -1,6 +1,3 @@
-from CleanData import CleanData
-from SplitData import SplitData
-from InputData import ImagePathsLabels
 from PrintFunctions import *
 
 if __name__=='__main__':

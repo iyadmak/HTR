@@ -1,10 +1,4 @@
-from CleanData import CleanData
-from SplitData import SplitData
-from InputData import ImagePathsLabels
-from PrepareLabels import PrepareLabels
-
-##### FunctionsCalled()
-
+from PreprocessFile import *
 
 
 
@@ -41,7 +35,7 @@ def ImagePathsLabelsFunc():
     validation_img_paths, validation_labels = ImagePathsLabels(validation_samples)
     test_img_paths, test_labels = ImagePathsLabels(test_samples)
 
-    print(f'''✅  lists Generated Successfully ''')
+    print(f'''\n✅  lists Generated Successfully ''')
 
 
 
@@ -49,15 +43,17 @@ def PrepareLabelsFunc():
 
     print(" \n💡 Prepare Labels ... \n")
 
-    train_CleanedLabels,train_characters,train_max_len = PrepareLabels(train_labels)
-    test_CleanedLabels,test_characters,test_max_len= PrepareLabels(test_labels)
-    validation_CleanedLabels,validation_characters,validation_max_len = PrepareLabels(validation_labels)
+    train_CleanedLabels,train_characters,train_max_len = PrepareTrainLabels(train_labels)
+    test_CleanedLabels = CleanLabels(test_labels)
+    validation_CleanedLabels = CleanLabels(validation_labels)
+
+    print(f'''
+\nTraining data :  
+
+✅  {len(train_CleanedLabels)} Cleaned labels 
+✅  {len(train_characters)} Character
+✅  {train_max_len} Maximum word length  ''')
     
-    print(f'''\n✅  training data -> Maximum length: {train_max_len}
-                    Vocab size : {len(train_characters)}''')
 
-    print(f'''✅  Testing data -> Maximum length: {test_max_len}
-                  Vocab size : {len(test_characters)}''')
 
-    print(f'''✅  Validation data -> Maximum length: {validation_max_len}
-                  Vocab size : {len(validation_characters)}''')
+    
