@@ -9,7 +9,6 @@ import os
 def MainFunc():
     print("\n ############ Preprocess Data ############ \n")
 
-
 def CleanDataFunc():
 
     global words_list,words
@@ -21,7 +20,6 @@ def CleanDataFunc():
         print(e)
     else : 
         print(f"\n✅ {len(words_list)} lines selected from {len(words)}")
-
 
 def SplitDataFunc():
     global train_samples ,validation_samples ,test_samples
@@ -36,7 +34,6 @@ def SplitDataFunc():
 ✅ {len(train_samples)} Training lines
 ✅ {len(test_samples)} Test lines
 ✅ {len(validation_samples)} Validation lines ''')
-
 
 def ImagePathsLabelsFunc():
 
@@ -90,15 +87,16 @@ def DataFilesGenerator ():
     
         for i in bar(range(len(data))) :
             lines = data[i]  
+            
             if data[i] != train_max_len :
                 with open(os.path.join(path,f"{names[i]}.txt"), 'w') as f:
                     for line in lines:
                         f.write(line)
                         f.write('\n')
             else :
-                with open(f'{names[i]}.txt', 'w') as f:
-
+                with open(os.path.join(path,f"{names[i]}.txt"), 'w') as f:
                         f.write(str(data[i]))
+            
             f.close()
             
 
