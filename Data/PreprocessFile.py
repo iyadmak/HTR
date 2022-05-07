@@ -1,3 +1,4 @@
+from sklearn.metrics import dcg_score
 from tqdm import tqdm  as bar
 import numpy as np
 import os
@@ -25,6 +26,7 @@ def CleanData():
     np.random.shuffle(words_list)
 
     return words_list ,words
+
 
 def SplitData(words_list) : 
 
@@ -64,6 +66,7 @@ def ImagePathsLabels(samples):
 
     return paths, corrected_samples
 
+
 def PrepareTrainLabels(labels) : 
     CleanedLabels = []
     characters = set()
@@ -78,6 +81,7 @@ def PrepareTrainLabels(labels) :
         CleanedLabels.append(label)
 
     return CleanedLabels,characters,max_len
+
 
 def CleanLabels(labels):
     cleaned_labels = []

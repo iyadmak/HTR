@@ -1,5 +1,6 @@
 from PrintFunctions import *
 
+
 if __name__=='__main__':
     ##### MainFunc()
     MainFunc()
@@ -20,3 +21,11 @@ if __name__=='__main__':
 
     ##### PrepareLabelsFunc
     PrepareLabelsFunc() 
+
+    a,b,c,d,e,f,g,h = ReturnData()
+
+
+
+
+
+
