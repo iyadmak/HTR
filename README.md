@@ -7,6 +7,7 @@
 * **Implemented with TensorFlow (TF).**
 * **Trained on the IAM off-line HTR dataset.**
 * **The model takes images of single words as input & outputs the recognized text.**
+* **And more..(im not good at writing the README)**
 ----
 
 ## **How to use it**
@@ -29,7 +30,19 @@ Install requirements
 pip3 install -r requirements.txt
 ```
 
-## **Preprocess Step**
+## **Preprocess IAM Dataset**
+
+Follow these instructions to get the IAM dataset:
+
+* Register for free at this [website](http://www.fki.inf.unibe.ch/databases/iam-handwriting-database)
+* Download `words/words.tgz`
+* Download `ascii/words.txt`
+* Create a directory for the dataset on your disk, and create two subdirectories: `words` and `ascii`
+* Put `words.txt` into the `ascii` directory
+* Put the content (directories `a01`, `a02`, ...) of `words.tgz` into the `words` directory
+* Change the `path` from `PreprocessFile.CleanData`  with the current `path` of ascii directory
+* Change the `base_path` from `PreprocessFile.ImagePathsLabels`  with the current `path` of word directory
+
 Run the CL
 
 ```
@@ -39,8 +52,13 @@ python3 Main.py
 the Main file will
 * Clean & Split data
 * Generate New Data Files in New Folder named "Data"
-* All actions will be demonstrated by some animations in the Terminal
+
+All Preprocess Steps will be demonstrated by some animations in the Terminal
+
 
 
 <a href="#" target="_blank"> <img src="Doc/Terminal.png" alt="tf" width="80%" height="80%"/> </a>
 
+
+
+## **Training Model**
