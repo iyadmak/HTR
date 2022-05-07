@@ -15,3 +15,30 @@ Clone it
 ```
 https://github.com/Moha-boukhatem/HTR.git
 ```
+
+Create & activate the ENV
+
+```
+python3 -m venv venv
+. venv/bin/activate
+```
+
+Install requirements
+
+```
+pip3 install -r requirements.txt
+```
+
+## **Preprocess Step**
+Run 
+
+```
+cd Preprocess
+python3 Main.py
+```
+the Main file will
+* Clean & Split data
+* Generate New Data Files in New Folder named "Data"
+* All actions will be demonstrated by some animations in the Terminal
+
+![Terminal](Doc/Terminal.png)
