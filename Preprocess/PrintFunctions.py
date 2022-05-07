@@ -76,7 +76,9 @@ def DataFilesGenerator ():
     
     ## Create new dir
 
-    os.chdir("..")
+    if os.path.basename(os.getcwd()) == "Preprocess" : 
+        os.chdir("..")
+    
     directory = "Data"
     parent_dir = os.getcwd()
     path = os.path.join(parent_dir, directory)
