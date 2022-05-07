@@ -30,7 +30,7 @@ pip3 install -r requirements.txt
 ```
 
 ## **Preprocess Step**
-Run 
+Run the CL
 
 ```
 cd Preprocess
@@ -41,4 +41,6 @@ the Main file will
 * Generate New Data Files in New Folder named "Data"
 * All actions will be demonstrated by some animations in the Terminal
 
-![Terminal](Doc/Terminal.png)
+
+<a href="#" target="_blank"> <img src="Doc/Terminal.png" alt="tf" width="80%" height="80%"/> </a>
+
