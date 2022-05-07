@@ -2,6 +2,7 @@
 import imp
 from PreprocessFile import *
 from tqdm import tqdm as bar
+import os
 
 ##### PrintFunctions()
 
@@ -76,12 +77,21 @@ def DataFilesGenerator ():
     data = [train_img_paths,train_CleanedLabels,train_characters,train_max_len,test_img_paths,test_CleanedLabels,validation_img_paths,validation_CleanedLabels]    
     names = ["train_img_paths","train_CleanedLabels","train_characters","train_max_len","test_img_paths","test_CleanedLabels","validation_img_paths","validation_CleanedLabels"]    
     
+    ## Create new dir
+
+    os.chdir("..")
+    directory = "Data"
+    parent_dir = os.getcwd()
+    path = os.path.join(parent_dir, directory)
+    os.mkdir(path)
+    
+
     try : 
     
         for i in bar(range(len(data))) :
             lines = data[i]  
             if data[i] != train_max_len :
-                with open(f'{names[i]}.txt', 'w') as f:
+                with open(os.path.join(path,f"{names[i]}.txt"), 'w') as f:
                     for line in lines:
                         f.write(line)
                         f.write('\n')
@@ -90,12 +100,14 @@ def DataFilesGenerator ():
 
                         f.write(str(data[i]))
             f.close()
+            
+
     except Exception as e : 
         print(e)
     else : 
-        print("\n✅  Data Files generated Successfully\n") 
+        print("\n✅  Data Files generated Successfully \n") 
 
-      
+
     
 
             
