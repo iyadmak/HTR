@@ -2,6 +2,7 @@ from tqdm import tqdm  as bar
 import numpy as np
 import os
 
+
 def CleanData():
     
     words_list = []

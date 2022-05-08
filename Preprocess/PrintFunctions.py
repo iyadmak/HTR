@@ -4,10 +4,10 @@ from PreprocessFile import *
 from tqdm import tqdm as bar
 import os
 
-##### PrintFunctions()
 
 def MainFunc():
     print("\n ############ Preprocess Data ############ \n")
+
 
 def CleanDataFunc():
 
@@ -20,6 +20,7 @@ def CleanDataFunc():
         print(e)
     else : 
         print(f"\n✅ {len(words_list)} lines selected from {len(words)}")
+
 
 def SplitDataFunc():
     global train_samples ,validation_samples ,test_samples
@@ -35,6 +36,7 @@ def SplitDataFunc():
 ✅ {len(test_samples)} Test lines
 ✅ {len(validation_samples)} Validation lines ''')
 
+
 def ImagePathsLabelsFunc():
 
     print("\n💡 Generate lists of paths & image names ...\n")
@@ -48,6 +50,7 @@ def ImagePathsLabelsFunc():
         print(e)
     else : 
         print(f'''\n✅  lists Generated Successfully ''')
+
 
 def PrepareLabelsFunc():
 
@@ -68,6 +71,7 @@ def PrepareLabelsFunc():
 ✅  {len(train_characters)} Character
 ✅  {train_max_len} Maximum word length  ''')
     
+
 def DataFilesGenerator ():
     print(" \n💡 Generate the Files of Data ... \n")
 
@@ -107,8 +111,4 @@ def DataFilesGenerator ():
     else : 
         print("\n✅  Data Files generated Successfully \n") 
 
-
-    
-
-            
     
