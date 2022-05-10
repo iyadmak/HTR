@@ -75,12 +75,13 @@ def PrepareLabelsFunc():
 def DataFilesGenerator ():
     print(" \n💡 Generate the Files of Data ... \n")
 
+    train_characters.sort()
     data = [train_img_paths,train_CleanedLabels,train_characters,train_max_len,test_img_paths,test_CleanedLabels,validation_img_paths,validation_CleanedLabels]    
     names = ["train_img_paths","train_CleanedLabels","train_characters","train_max_len","test_img_paths","test_CleanedLabels","validation_img_paths","validation_CleanedLabels"]    
     
     ## Create new dir
 
-    if os.path.basename(os.getcwd()) == "Preprocess" : 
+    if os.path.basename(os.getcwd()) == "preprocess" : 
         os.chdir("..")
     
     directory = "Data"

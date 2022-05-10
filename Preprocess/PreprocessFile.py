@@ -79,7 +79,9 @@ def PrepareTrainLabels(labels) :
 
         max_len = max(max_len, len(label))
         CleanedLabels.append(label)
-        
+    
+    characters = list(characters)
+    
     return CleanedLabels,characters,max_len
 
 
