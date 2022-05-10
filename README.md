@@ -57,7 +57,7 @@ All Preprocess Steps will be demonstrated by some animations in the Terminal
 
 
 
-<a href="#" target="_blank"> <img src="Doc/Terminal.png" alt="tf" width="80%" height="80%"/> </a>
+<a href="#" target="_blank"> <img src="assets/Terminal.png" alt="tf" width="80%" height="80%"/> </a>
 
 
 
