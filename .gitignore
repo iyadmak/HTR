@@ -2,3 +2,5 @@ venv/
 src/__pycache__/
 Preprocess/__pycache__/
 Data/
+
+/nonused.py
