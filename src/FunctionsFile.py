@@ -1,3 +1,4 @@
+from re import A
 from PIL import Image
 import pandas as pd
 import numpy as np
@@ -48,6 +49,19 @@ def ConvertToCat(data) :
     return np.array(pd.get_dummies(data))
 
 
+def ReshapeData(*arr):
+
+    AllData = []
+    for data in arr : 
+        data = data.reshape(data.shape[0],-1)
+        data = data.astype('float32')
+        data /= 255
+        AllData.append(data)
+
+    return AllData
+   
+
+    
 
 
 
