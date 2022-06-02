@@ -66,23 +66,23 @@ def ImagePathsLabels(samples):
 
     return paths, corrected_samples
 
-
-def PrepareTrainLabels(labels) : 
-    CleanedLabels = []
-    characters = set()
+def Nb_Len_Labels(*data) : 
+    
+    characters = ['!', '"', '#', '$', '&', "'", '(', ')', '*', '+', ',', '-', '.', '/', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', ':', ';', '?', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
     max_len = 0
 
-    for label in bar(labels):
-        label = label.split(" ")[-1].strip()
-        for char in label:
-            characters.add(char)
+    for labels in data :
+        
+        for label in bar(labels):
+                        
+            if len(label) > max_len : 
+                max_len = len(label)
+                max_labal = label
+                
+       
+        return characters,max_len,max_labal
 
-        max_len = max(max_len, len(label))
-        CleanedLabels.append(label)
-    
-    characters = list(characters)
-    
-    return CleanedLabels,characters,max_len
+
 
 
 def CleanLabels(labels):

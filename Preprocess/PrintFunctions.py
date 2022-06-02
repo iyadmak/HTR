@@ -1,5 +1,3 @@
-
-import imp
 from PreprocessFile import *
 from tqdm import tqdm as bar
 import os
@@ -56,32 +54,38 @@ def PrepareLabelsFunc():
 
     print(" \n💡 Prepare Labels ... \n")
     
-    global train_CleanedLabels,train_characters,train_max_len,test_CleanedLabels,test_CleanedLabels,validation_CleanedLabels
+    global train_CleanedLabels,characters,max_len,max_label,test_CleanedLabels,test_CleanedLabels,validation_CleanedLabels
     
     try :     
-        train_CleanedLabels,train_characters,train_max_len = PrepareTrainLabels(train_labels)
+
+        train_CleanedLabels = CleanLabels(train_labels)
         test_CleanedLabels = CleanLabels(test_labels)
         validation_CleanedLabels = CleanLabels(validation_labels)
+        
+        characters,max_len,max_label = Nb_Len_Labels(train_CleanedLabels,test_CleanedLabels,validation_CleanedLabels)
+        
+        
+   
     except Exception as e : 
         print(e)
     else : 
         print(f'''
 
 ✅  {len(train_CleanedLabels)} Cleaned labels 
-✅  {len(train_characters)} Character
-✅  {train_max_len} Maximum word length  ''')
+✅  {len(characters)} Character
+✅  {max_len} Maximum word length  ''')
     
 
 def DataFilesGenerator ():
+    
     print(" \n💡 Generate the Files of Data ... \n")
 
-    train_characters.sort()
-    data = [train_img_paths,train_CleanedLabels,train_characters,train_max_len,test_img_paths,test_CleanedLabels,validation_img_paths,validation_CleanedLabels]    
-    names = ["train_img_paths","train_CleanedLabels","train_characters","train_max_len","test_img_paths","test_CleanedLabels","validation_img_paths","validation_CleanedLabels"]    
+    data = [train_img_paths,train_CleanedLabels,characters,max_len,max_label,test_img_paths,test_CleanedLabels,validation_img_paths,validation_CleanedLabels]    
+    names = ["train_img_paths","train_CleanedLabels","characters","max_len","max_label","test_img_paths","test_CleanedLabels","validation_img_paths","validation_CleanedLabels"]    
     
     ## Create new dir
 
-    if os.path.basename(os.getcwd()) == "preprocess" : 
+    if os.path.basename(os.getcwd()) == "preprocess" or os.path.basename(os.getcwd()) == "src": 
         os.chdir("..")
     
     directory = "Data"
@@ -95,7 +99,7 @@ def DataFilesGenerator ():
         for i in bar(range(len(data))) :
             lines = data[i]  
             
-            if data[i] != train_max_len :
+            if data[i] != max_len and  data[i] != max_label :
                 with open(os.path.join(path,f"{names[i]}.txt"), 'w') as f:
                     for line in lines:
                         f.write(line)
