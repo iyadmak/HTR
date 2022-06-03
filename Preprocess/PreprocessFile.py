@@ -7,7 +7,7 @@ def CleanData():
     
     words_list = []
 
-    path = "/Users/book/Downloads/PFE/Outils/IAM_Dataset/ascii"
+    path = "/Users/Hichem/Desktop/Data/ascii"
     words = open(f"{path}/words.txt", "r").readlines()
 
     
@@ -45,7 +45,7 @@ def ImagePathsLabels(samples):
 
     paths = []
     corrected_samples = []
-    base_path = "/Users/book/Downloads/PFE/Outils/IAM_Dataset/words"
+    base_path = "/Users/Hichem/Desktop/Data/words"
 
     
     for  file_line in bar(samples):
